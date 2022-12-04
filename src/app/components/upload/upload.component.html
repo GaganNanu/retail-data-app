@@ -1,0 +1,36 @@
+<!-- <div>
+    <mat-form-field appearance="fill">
+        <mat-label>Select file type</mat-label>
+        <mat-select [formControl]="typeControl">
+            <mat-option value="Products">Products</mat-option>
+            <mat-option value="Transactions">Transactions</mat-option>
+            <mat-option value="Products">Products</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div> -->
+<mat-spinner *ngIf="uploading"></mat-spinner>
+<div>
+    <button mat-button class="submit" (click)="productsFile.click()" color="primary">
+        Choose a products csv file
+        <mat-icon>attach_file</mat-icon>
+    </button>
+    {{productsFileName || "No file uploaded yet."}}
+    <input id="products-file-upload" accept=".csv" type="file" hidden #productsFile (change)="handleProductsFile($event)">
+    <button mat-button class="submit" (click)="transactionsFile.click()" color="primary">
+        Choose a transactions csv file
+        <mat-icon>attach_file</mat-icon>
+    </button>
+    {{transactionsFileName || "No file uploaded yet."}}
+    <input id="transactions-file-upload" accept=".csv" type="file" hidden #transactionsFile (change)="handleTransactionsFile($event)">
+    <button mat-button class="submit" (click)="householdsFile.click()" color="primary">
+        Choose a households csv file
+        <mat-icon>attach_file</mat-icon>
+    </button>
+    {{householdsFileName || "No file uploaded yet."}}
+    <input id="households-file-upload" accept=".csv" type="file" hidden #householdsFile (change)="handleHouseHoldsFile($event)">
+</div>
+<div>
+    <button mat-button class="submit" (click)="upload()" color="primary">
+        Upload
+    </button>
+</div>

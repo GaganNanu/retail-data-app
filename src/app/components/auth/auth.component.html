@@ -1,0 +1,32 @@
+<div class="toggle-buttons">
+    <mat-button-toggle-group value="sign-in" (change)="toggleSignup($event.value)">
+        <mat-button-toggle value="sign-in">Sign In</mat-button-toggle>
+        <mat-button-toggle value="sign-up">Sign Up</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<div *ngIf="!isSignUp">
+    <mat-form-field appearance="fill" class="form-input">
+        <mat-label for="text">User Name</mat-label>
+        <input matInput id="name" type="text" [formControl]="userNameControl">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-input">
+        <mat-label for="password">Password</mat-label>
+        <input matInput id="password" type="password" [formControl]="passwordControl">
+    </mat-form-field>
+    <button mat-button class="submit" color="primary"  (click)="signIn()">Sign In</button>
+</div>
+<div *ngIf="isSignUp">
+    <mat-form-field appearance="fill" class="form-input">
+        <mat-label for="text">User Name</mat-label>
+        <input matInput id="name" type="text" [formControl]="userNameControl">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-input">
+        <mat-label for="email">Email</mat-label>
+        <input matInput id="email" type="email" [formControl]="emailControl">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-input">
+        <mat-label for="password">Password</mat-label>
+        <input matInput id="password" type="password" [formControl]="passwordControl">
+    </mat-form-field>
+    <button mat-button class="submit" color="primary" (click)="signUp()">Sign Up</button>
+</div>
