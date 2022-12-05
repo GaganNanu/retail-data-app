@@ -34,7 +34,7 @@ export class AuthComponent implements OnInit {
   }
 
   public signUp() {
-    if (!this.userNameControl.value || !this.passwordControl.value || this.emailControl.value) {
+    if (!this.userNameControl.value || !this.passwordControl.value || !this.emailControl.value) {
       this.toastr.error('Fill all the values before submitting!');
       return;
     }
