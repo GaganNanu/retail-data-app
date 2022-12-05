@@ -8,29 +8,64 @@
         </mat-select>
     </mat-form-field>
 </div> -->
-<mat-spinner *ngIf="uploading"></mat-spinner>
-<div>
-    <button mat-button class="submit" (click)="productsFile.click()" color="primary">
-        Choose a products csv file
-        <mat-icon>attach_file</mat-icon>
-    </button>
-    {{productsFileName || "No file uploaded yet."}}
-    <input id="products-file-upload" accept=".csv" type="file" hidden #productsFile (change)="handleProductsFile($event)">
-    <button mat-button class="submit" (click)="transactionsFile.click()" color="primary">
-        Choose a transactions csv file
-        <mat-icon>attach_file</mat-icon>
-    </button>
-    {{transactionsFileName || "No file uploaded yet."}}
-    <input id="transactions-file-upload" accept=".csv" type="file" hidden #transactionsFile (change)="handleTransactionsFile($event)">
-    <button mat-button class="submit" (click)="householdsFile.click()" color="primary">
-        Choose a households csv file
-        <mat-icon>attach_file</mat-icon>
-    </button>
-    {{householdsFileName || "No file uploaded yet."}}
-    <input id="households-file-upload" accept=".csv" type="file" hidden #householdsFile (change)="handleHouseHoldsFile($event)">
-</div>
-<div>
-    <button mat-button class="submit" (click)="upload()" color="primary">
-        Upload
-    </button>
+<div class="upload-main">
+    <mat-spinner *ngIf="uploading"></mat-spinner>
+    <mat-card class="card">
+        <mat-card-content>
+            <div>
+                <h2>
+                    Instructions For Data Upload
+                </h2>
+                <h3>1. Choose all three csv files and click upload</h3>
+                <h3>2. Please don't upload very large csv due to limitation on the server and database</h3>
+                <h3>3. Few thousand rows at max is recommended</h3>
+                <h3>4. Restrict the csv column names to the below: </h3>
+                <h3>Transactions: HSHD_NUM, BASKET_NUM, PURCHASE_, PRODUCT_NUM, SPEND, UNITS, STORE_R, WEEK_NUM, YEAR
+                </h3>
+                <h3>Products: PRODUCT_NUM, DEPARTMENT, COMMODITY, BRAND_TY, NATURAL_ORGANIC_FLAG</h3>
+                <h3>Households: HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE,
+                    CHILDREN</h3>
+            </div>
+            <div class="upload-container">
+                <div class="upload-group">
+                    <button mat-button (click)="productsFile.click()" color="primary">
+                        Choose a products csv file
+                        <mat-icon>attach_file</mat-icon>
+                    </button>
+                    <input id="products-file-upload" accept=".csv" type="file" hidden #productsFile
+                        (change)="handleProductsFile($event)">
+                    <span>
+                        {{productsFileName || "No file uploaded yet."}}
+                    </span>
+                </div>
+                <div class="upload-group">
+                    <button mat-button (click)="transactionsFile.click()" color="primary">
+                        Choose a transactions csv file
+                        <mat-icon>attach_file</mat-icon>
+                    </button>
+                    <input id="transactions-file-upload" accept=".csv" type="file" hidden #transactionsFile
+                        (change)="handleTransactionsFile($event)">
+                    <span>
+                        {{transactionsFileName || "No file uploaded yet."}}
+                    </span>
+                </div>
+                <div class="upload-group">
+                    <button mat-button (click)="householdsFile.click()" color="primary">
+                        Choose a households csv file
+                        <mat-icon>attach_file</mat-icon>
+                    </button>
+                    <input id="households-file-upload" accept=".csv" type="file" hidden #householdsFile
+                        (change)="handleHouseHoldsFile($event)">
+                    <span>
+                        {{householdsFileName || "No file uploaded yet."}}
+                    </span>
+                </div>
+                <div>
+                    <button mat-button class="upload-button" (click)="upload()" color="primary">
+                        Upload
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

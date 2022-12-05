@@ -54,6 +54,7 @@ export class SampleDataComponent implements OnInit, AfterViewInit {
         this.resultsLength = data.length;
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.paginator.pageSize = 10;
         this.dataSource.sort = this.sort;
       });
   }

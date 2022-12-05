@@ -18,6 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
+    MatCardModule,
     ToastrModule.forRoot()
   ],
   providers: [],

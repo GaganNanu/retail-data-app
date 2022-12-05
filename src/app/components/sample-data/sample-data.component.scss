@@ -1,7 +1,8 @@
 table {
     display: block;
     overflow: scroll;
-    width: 100px;
+    height: 60vh;
+    margin-top: 30px;
 }
 
 .mat-mdc-form-field {
@@ -9,21 +10,32 @@ table {
     width: 100%;
 }
 
+
 td,
 th {
     width: 25%;
 }
 
-.example-container {
+.search-container {
+    display: block;
     position: absolute;
-    width: 80%;
+    top: 150px;
+    left: 50px;
+    right: 50px;
 }
 
+.example-container {
+    // margin-top: 100px;
+    // height: 100%;
+}
+
+
 .example-table-container {
-    position: relative;
+    position: absolute;
     min-height: 200px;
-    max-height: 400px;
+    // max-height: 1000px;
     overflow: scroll;
+    // height: 100%;
 }
 
 
@@ -41,7 +53,7 @@ th {
 }
 
 .example-rate-limit-reached {
-    max-width: 360px;
+    // max-width: 360px;
     text-align: center;
 }
 
@@ -53,4 +65,11 @@ th {
 
 .mat-column-created {
     max-width: 124px;
+}
+
+.submit {
+    background-color: #1976d2;
+    color: white !important;
+    margin-left: 46%;
+    height: 40px;
 }

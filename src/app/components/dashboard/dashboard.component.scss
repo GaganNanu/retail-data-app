@@ -1,0 +1,29 @@
+img {
+    width: 90%;
+}
+
+
+.visualizations {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.visualizations > div {
+    flex: 45%;
+    /* or - flex: 0 50% - or - flex-basis: 50% - */
+    /*demo*/
+    // box-shadow: 0 0 0 1px #1976d2;
+    margin-bottom: 20px;
+}
+
+.vis {
+    padding:10px;
+}
+
+.dashboard-container {
+    margin-top: 150px;
+}
+
+.heading {
+    text-align: center;
+}

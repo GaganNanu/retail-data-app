@@ -11,10 +11,10 @@ export class RetailDataService {
   constructor(private http: HttpClient) { }
 
   getRow(HSHD_NUM: string) {
-    return this.http.get<RetailData[]>(environment.apiUrl + '/retaildata/' + HSHD_NUM);
+    return this.http.get<RetailData[]>(environment.apiUrl + 'retaildata/' + HSHD_NUM);
   }
 
   upload(file: any) {
-    return this.http.post<string | boolean>(environment.apiUrl + '/retaildata/upload', file);
+    return this.http.post<string | boolean>(environment.apiUrl + 'retaildata/upload', file);
   }
 }
