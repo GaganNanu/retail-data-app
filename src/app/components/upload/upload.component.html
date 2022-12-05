@@ -9,8 +9,8 @@
     </mat-form-field>
 </div> -->
 <div class="upload-main">
-    <div class="loader">
-        <mat-spinner *ngIf="uploading"></mat-spinner>
+    <div *ngIf="uploading" class="loader">
+        <mat-spinner ></mat-spinner>
     </div>
     <mat-card class="card">
         <mat-card-content>
