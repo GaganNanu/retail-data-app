@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterContentChecked, Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth-service/auth.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements AfterContentChecked {
   isSignUp = false;
   userNameControl = new FormControl('');
   emailControl = new FormControl('');
@@ -24,8 +24,8 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    if (this.loggedInEmail) {
+  ngAfterContentChecked() {
+    if (localStorage.getItem("email")) {
       this.router.navigateByUrl('/sample');
     }
   }
