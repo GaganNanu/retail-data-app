@@ -36,7 +36,7 @@ export class UploadComponent {
       return;
     }
     this.uploading = true;
-
+    this.fileData = new FormData();
     this.fileData.append("products", this.productsFile);
     this.fileData.append("households", this.householdsFile);
     this.fileData.append("transactions", this.transactionsFile);
@@ -61,14 +61,6 @@ export class UploadComponent {
       this.productsFileName = file.name;
       this.productsFile = file;
     }
-
-    for (var p of this.fileData) {
-      let name = p[0];
-      let value = p[1];
-
-      console.log(name, value)
-    }
-
   }
 
   handleTransactionsFile(event: any) {
@@ -77,12 +69,6 @@ export class UploadComponent {
       this.transactionsFileName = file.name;
       this.transactionsFile = file;
     }
-    for (var p of this.fileData) {
-      let name = p[0];
-      let value = p[1];
-
-      console.log(name, value)
-    }
   }
 
   handleHouseHoldsFile(event: any) {
@@ -90,12 +76,6 @@ export class UploadComponent {
     if (file) {
       this.householdsFileName = file.name;
       this.householdsFile = file;
-    }
-    for (var p of this.fileData) {
-      let name = p[0];
-      let value = p[1];
-
-      console.log(name, value)
     }
   }
 
