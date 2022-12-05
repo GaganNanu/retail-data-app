@@ -1,6 +1,9 @@
 <div class="search-container">
-    <h4>Default data for HSHD_NUM = 10 is loaded. Search for a different HSHD_NUM</h4>
-    <h4>To improve performance only 50k transactions are loaded by default. New data can be uploaded from the upload tab</h4>
+    <div style="text-align: center">
+        <h4>Default data for HSHD_NUM = 10 is loaded. Search for a different HSHD_NUM</h4>
+        <h4>To improve performance only 50k transactions are loaded by default. New data can be uploaded from the upload tab</h4>
+        <h4>All columns are sortable</h4>
+    </div>
     <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
